@@ -1,0 +1,11 @@
+.statisticsTitle {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.statisticItem {
+  font-size: 30px;
+  font-weight: 500;
+}
+.statisticItem:not(:last-child) {
+  margin-bottom: 15px;
+}

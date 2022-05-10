@@ -21,6 +21,7 @@ class App extends Component {
           justifyContent: 'center',
           alignItems: 'center',
           fontSize: 30,
+
           color: '#010101',
         }}
       >
