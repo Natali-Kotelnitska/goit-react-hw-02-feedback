@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import s from './Section.module.css';
+
 class Section extends Component {
-  // = ({ title, children }) => {
   render() {
     const { title, children } = this.props;
-    console.log(children);
+
     return (
       <section className={s.section}>
         <h2>

@@ -1,37 +1,38 @@
 // Винеси блок кнопок в компонент <FeedbackOptions options={} onLeaveFeedback={}>.
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './Button.module.css';
 
 class FeedbackOptions extends Component {
-  onGoodButtonClick = () => {
-    console.log('Click good');
-  };
   render() {
-    const { good, neutral, bad } = this.props;
-    console.log(good);
+    const { options, onButtonClick } = this.props;
 
     return (
       <div className={s.container}>
-        <button
-          type="button"
-          className={s.button}
-          onClick={this.onGoodButtonClick}
-        >
-          Good
-        </button>
-        <button type="button" className={s.button}>
-          Neutral
-        </button>
-        <button type="button" className={s.button}>
-          Bad
-        </button>
+        {Object.keys(options).map(item => {
+          return (
+            <button
+              key={item}
+              type="button"
+              name={item}
+              className={s.button}
+              onClick={e => {
+                onButtonClick(e.currentTarget.name);
+              }}
+            >
+              {item}
+            </button>
+          );
+        })}
       </div>
     );
   }
 }
 
-// FeedbackOptions.propTypes = {
-//   props: PropTypes.shape,
-// };
+FeedbackOptions.propTypes = {
+  options: PropTypes.shape({
+    item: PropTypes.string,
+  }),
+  onButtonClick: PropTypes.func.isRequired,
+};
 export default FeedbackOptions;
