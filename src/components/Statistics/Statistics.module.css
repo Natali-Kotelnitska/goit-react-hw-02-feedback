@@ -1,8 +1,8 @@
-.statisticsTitle {
+.statisticsWrapper {
   margin-top: 25px;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px;
   font-size: 40px;
-  align-items: center;
+  align-items: center; */
 }
 .statisticItem {
   font-size: 30px;
